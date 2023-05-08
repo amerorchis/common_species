@@ -1,4 +1,4 @@
-from counts import get_species_list
+from api.counts import get_species_list
     
 def html():
     species_list = get_species_list()

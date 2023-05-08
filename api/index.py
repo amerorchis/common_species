@@ -1,5 +1,5 @@
 from flask import Flask
-from gen_html import html
+from api.gen_html import html
 
 app = Flask(__name__)
 
