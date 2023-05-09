@@ -21,7 +21,7 @@ def html():
         html += "<li style='line-height: 1.5;'>{}</li>".format(species)
     html += "</ol>"
     seen = int(species_seen())
-    html += f'\n&nbsp;Observed {seen} of 1,132 vascular plants in Glacier, {round((seen/1132)*100)}%'
+    html += f'\n&nbsp;&nbsp;Observed {seen} of 1,132 vascular plants in Glacier, {round((seen/1132)*100)}%.'
     html += """
 
   </body>
