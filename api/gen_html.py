@@ -8,20 +8,20 @@ def html():
   <head>
     <title>Species to Observe</title>
     <style>
-      h3 {
+      body {
         font-family: Verdana, sans-serif;
       }
     </style>
   </head>
   <body>
-    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 Most Observed Species I Haven't Recorded</h3>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;25 Most Observed Species I Haven't Recorded</h3>
     """
     html += "<ol style='line-height: 1.5;'>"
     for species in species_list:
         html += "<li style='line-height: 1.5;'>{}</li>".format(species)
     html += "</ol>"
     seen = int(species_seen())
-    html += f'\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Observed {seen} of 1,132, {round((seen/1132)*100)}%'
+    html += f'\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Observed {seen} of 1,132 vascular plants in Glacier, {round((seen/1132)*100)}%'
     html += """
 
   </body>
