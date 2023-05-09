@@ -60,3 +60,9 @@ def get_species_list():
     for i, species in enumerate(exclude_observed()):
         top.append(f'{species.name()}, <a href="https://www.inaturalist.org/observations?place_id=72841&taxon_id={species.id}" target="_blank">link</a>')
     return top
+
+def species_seen():
+    url = 'https://api.inaturalist.org/v1/observations/species_counts?verifiable=any&nelat=49.1766936942157&nelng=-112.2055199539685&swlat=46.64680635363439&swlng=-115.32946353584053&user_id=apsmith10&iconic_taxa%5B%5D=Plantae&locale=en&preferred_place_id=1&per_page=500'
+    r = requests.get(url)
+    data = json.loads(r.text)
+    return data['total_results']
