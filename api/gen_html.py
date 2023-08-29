@@ -1,4 +1,5 @@
-from api.counts import get_species_list, species_seen
+if __name__ != "__main__":
+  from api.counts import get_species_list, species_seen
     
 def html():
     species_list = get_species_list()
@@ -27,5 +28,8 @@ def html():
   </body>
 </html>
     """
-    print(html)
     return html
+
+if __name__ == "__main__":
+  from counts import get_species_list, species_seen
+  print(html())

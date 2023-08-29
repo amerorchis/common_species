@@ -32,7 +32,7 @@ def get_glac():
 
     results.extend(results2)
 
-    return [Species(i['count'], i['taxon']['id'], i['taxon']['name'], i['taxon']['preferred_common_name']) for i in results]
+    return [Species(i['count'], i['taxon']['id'], i['taxon']['name'], i['taxon'].get('preferred_common_name')) for i in results]
 
 def get_me() -> list:
     url = 'https://api.inaturalist.org/v1/observations/species_counts?verifiable=any&hrank=species&iconic_taxa%5B%5D=Plantae&user_id=apsmith10&locale=en&preferred_place_id=1&per_page=500'
@@ -66,3 +66,7 @@ def species_seen():
     r = requests.get(url)
     data = json.loads(r.text)
     return data['total_results']
+
+
+if __name__ == "__main__":
+    print(get_me())
